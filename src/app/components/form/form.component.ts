@@ -1,20 +1,20 @@
-import { DatePipe } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css'],
 })
-export class AppComponent implements OnInit {
+export class FormComponent {
   @ViewChild('fileUpload') fileUpload!: ElementRef<HTMLInputElement>;
   title = 'angular-forms';
   genders = ['Male', 'Female', 'Other'];
   SignUpForm!: FormGroup;
   fileName: any = '';
 
-  constructor(private fb: FormBuilder, private datePipe: DatePipe) {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -79,5 +79,4 @@ export class AppComponent implements OnInit {
   //   event.stopPropagation;
   //   this.onFileSelected(event);
   // }
-  
 }

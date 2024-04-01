@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container">
+  <div class="div_form mt-4">
+    <form class="form_box" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="email"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              formControlName="password"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-6 form_btn_logout">
+          <button type="button" class="btn btn-warning" (click)="logOut()">
+            logout
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.main_div {
+  display: flex;
+  justify-content: center;
+}
+.form_div {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 30%;
+  padding: 2rem;
+}
+.btn_login {
+  display: flex;
+  justify-content: end;
+}

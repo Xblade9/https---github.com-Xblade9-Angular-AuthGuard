@@ -1,0 +1,14 @@
+.div_form {
+  display: flex;
+  justify-content: center;
+}
+.form_box {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 30%;
+  padding: 1rem;
+}
+
+.form_btn_logout {
+  display: flex;
+  justify-content: end;
+}
