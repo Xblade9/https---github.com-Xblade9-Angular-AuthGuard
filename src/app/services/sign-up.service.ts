@@ -11,6 +11,8 @@ export class SignUpService {
     'https://devapicertifier.helloverify.com/api/auth/user/register';
   constructor(private http: HttpClient) {}
 
+  //for signup
+
   signUp(payload: signUpForm): Observable<signUpForm> {
     return this.http.post<signUpForm>(`${this.apiUrl}`, payload);
   }
