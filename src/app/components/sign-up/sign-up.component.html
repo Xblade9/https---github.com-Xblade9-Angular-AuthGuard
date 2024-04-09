@@ -7,12 +7,12 @@
       class="row g-3 form_div"
     >
       <div class="col-12">
-        <label for="inputEmail" class="form-label">Email:</label>
+        <label for="inputName" class="form-label">Name:</label>
         <input
-          type="email"
-          id="inputEmail"
+          type="text"
+          id="inputName"
           class="form-control"
-          formControlName="email"
+          formControlName="name"
         />
       </div>
       <div class="col-12">
@@ -24,22 +24,40 @@
           formControlName="phone"
         />
       </div>
+
       <div class="col-12">
-        <label for="inputName" class="form-label">Name:</label>
+        <label for="inputEmail" class="form-label">Email:</label>
         <input
-          type="text"
-          id="inputName"
+          type="email"
+          id="inputEmail"
           class="form-control"
-          formControlName="name"
+          formControlName="email"
         />
       </div>
+
+      <div class="col-12">
+        <label for="inputEmail" class="form-label">Password:</label>
+        <input
+          type="password"
+          id="inputEmail"
+          class="form-control"
+          formControlName="password"
+        />
+      </div>
+
       <div class="col-12">
         <div class="row">
           <div class="col-6">
             <button type="submit" class="btn btn-primary">Sign Up</button>
           </div>
           <div class="col-6 btn_login">
-            <button type="button" class="btn btn-secondary" (click)="backToLogin()">Login</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="backToLogin()"
+            >
+              Login
+            </button>
           </div>
         </div>
       </div>

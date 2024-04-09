@@ -20,9 +20,11 @@ import {MatTab, MatTabsModule} from '@angular/material/tabs';
 import { FormComponent } from './components/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { MatFormComponent } from './components/mat-form/mat-form.component';
+import { CdrComponent } from './components/cdr/cdr.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent, FormComponent, SignUpComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent, FormComponent, SignUpComponent, MatFormComponent, CdrComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -13,19 +18,22 @@ export class FormComponent {
   genders = ['Male', 'Female', 'Other'];
   SignUpForm!: FormGroup;
   fileName: any = '';
+  control!: any;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();
+    this.prefilledDetails();
+    this.disabledFields()
   }
 
   createForm() {
     this.SignUpForm = this.fb.group({
-      firstName: ['', [Validators.required]],
+      firstName: [ [Validators.required]],
       midName: [''],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required]],
+      lastName: [Validators.required],
+      email: ['', [Validators.email]],
       fileUpload: [''],
       gender: [null],
       dob: [''],
@@ -79,4 +87,30 @@ export class FormComponent {
   //   event.stopPropagation;
   //   this.onFileSelected(event);
   // }
+
+  prefilledDetails() {
+    // control =['firstName']
+    // for(const key of control){
+    //  this.SignUpForm.controls[key].setValue('hello')
+    // }
+
+    if (this.SignUpForm.valid) {
+      this.SignUpForm.patchValue({
+        firstName: 'Paras',
+        lastName: 'Joshi',
+        email: 'test@gmail.com',
+        gender: 'Male',
+        mobNo: '9900998800',
+      });
+    }
+  }
+
+  disabledFields() {
+    if(this.SignUpForm.valid){
+      const keys =['firstName','lastName','email'];
+      for(const key of keys){
+        this.SignUpForm.controls[key].disable()
+      }
+    }
+  }
 }

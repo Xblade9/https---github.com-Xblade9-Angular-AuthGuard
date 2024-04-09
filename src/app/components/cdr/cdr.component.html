@@ -1,0 +1,13 @@
+<app-header></app-header>
+<div>
+  <h2>{{ title }}</h2>
+  <p>{{ count | json}}</p>
+  <button type="button" (click)="increment()" class="btn btn-dark">
+    Increment
+  </button>
+</div>
+
+<div>
+  <p>Previous value : {{ prev }}</p>
+  <p>Current value : {{ curr }}</p>
+</div>

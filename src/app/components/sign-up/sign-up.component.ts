@@ -22,6 +22,7 @@ export class SignUpComponent implements OnInit {
       email: ['', Validators.required],
       phone: ['', Validators.required],
       name: ['', Validators.required],
+      password: ['', Validators.required],
     });
     return this.signUpForm;
   }
