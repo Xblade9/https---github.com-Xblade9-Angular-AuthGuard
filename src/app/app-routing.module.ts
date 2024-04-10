@@ -11,7 +11,7 @@ import { CdrComponent } from './components/cdr/cdr.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, canActivate: [authguardGuard] },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'form', component: FormComponent, canActivate: [authguardGuard] },
   { path: 'signup', component: SignUpComponent },

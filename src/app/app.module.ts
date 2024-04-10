@@ -22,9 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MatFormComponent } from './components/mat-form/mat-form.component';
 import { CdrComponent } from './components/cdr/cdr.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent, FormComponent, SignUpComponent, MatFormComponent, CdrComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent, FormComponent, SignUpComponent, MatFormComponent, CdrComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

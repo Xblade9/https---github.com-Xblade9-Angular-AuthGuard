@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { loginUser } from '../interfaces/login-interface';
 import { Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
 export class LoginServiceService {
-  private apiUrl = 'https://www.certifier.in:8002/api/auth/user/login';
+  private apiUrl = `${environment.apiurl}auth/user/login`;
   constructor(private http: HttpClient) {}
 
   login(payload: any): Observable<any> {
