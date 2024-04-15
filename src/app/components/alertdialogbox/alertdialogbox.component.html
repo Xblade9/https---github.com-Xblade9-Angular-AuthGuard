@@ -1,0 +1,25 @@
+<mat-dialog-content>
+  <div class="alert_box">
+    <img
+      src="../../../assets/images/green2.png"
+      alt="success"
+      style="height: 15vh"
+    />
+  </div>
+  <br />
+  <div class="alert_msg">
+    <strong>{{ message }}</strong>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onConfirmationClick()"
+    tabindex="1"
+    class="alert_btn"
+  >
+    Ok
+  </button>
+</mat-dialog-actions>

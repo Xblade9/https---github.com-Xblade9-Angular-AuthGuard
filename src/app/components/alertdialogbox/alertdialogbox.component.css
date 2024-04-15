@@ -1,0 +1,17 @@
+.alert_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 10rem;
+}
+.alert_btn {
+  height: 3rem;
+  width: 7rem;
+  border-radius: 2rem;
+}
+.alert_msg {
+  display: flex;
+  justify-content: center;
+  color: forestgreen;
+}

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignUpService } from 'src/app/services/sign-up.service';
+import { AlertdialogboxComponent } from '../alertdialogbox/alertdialogbox.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +13,12 @@ import { SignUpService } from 'src/app/services/sign-up.service';
 export class SignUpComponent implements OnInit {
   signUpForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private svc: SignUpService,private route:Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private svc: SignUpService,
+    private route: Router,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.createSignUpForm();
@@ -32,9 +39,25 @@ export class SignUpComponent implements OnInit {
       this.svc.signUp(this.signUpForm.value).subscribe({
         next: (res) => {
           console.log(res);
+          if (res.status === 'success') {
+            this.dialog.open(AlertdialogboxComponent, {
+              data: {
+                message: 'Sign up successfully, Click on OK to Login',
+              },
+            });
+          }
         },
         error: (err) => {
           console.log(err);
+          if (err.status === 422) {
+            if (err.error.status === 'fail') {
+              this.dialog.open(AlertdialogboxComponent, {
+                data: {
+                  message: err.error.response,
+                },
+              });
+            }
+          }
         },
       });
     } else {
@@ -42,7 +65,7 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-  backToLogin(){
+  backToLogin() {
     this.route.navigate(['login']);
   }
 }

@@ -23,9 +23,11 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MatFormComponent } from './components/mat-form/mat-form.component';
 import { CdrComponent } from './components/cdr/cdr.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AlertdialogboxComponent } from './components/alertdialogbox/alertdialogbox.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent, FormComponent, SignUpComponent, MatFormComponent, CdrComponent, FooterComponent],
+  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent, FormComponent, SignUpComponent, MatFormComponent, CdrComponent, FooterComponent, AlertdialogboxComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,7 +41,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MatSelectModule,
     MatButtonModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
