@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import {MatTab, MatTabsModule} from '@angular/material/tabs';
+import { MatTab, MatTabsModule } from '@angular/material/tabs';
 import { FormComponent } from './components/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -24,10 +24,23 @@ import { MatFormComponent } from './components/mat-form/mat-form.component';
 import { CdrComponent } from './components/cdr/cdr.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AlertdialogboxComponent } from './components/alertdialogbox/alertdialogbox.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PracticeComponent } from './components/practice/practice.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LoginComponent, HomeComponent, FormComponent, SignUpComponent, MatFormComponent, CdrComponent, FooterComponent, AlertdialogboxComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LoginComponent,
+    HomeComponent,
+    FormComponent,
+    SignUpComponent,
+    MatFormComponent,
+    CdrComponent,
+    FooterComponent,
+    AlertdialogboxComponent,
+    PracticeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,7 +55,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatTabsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

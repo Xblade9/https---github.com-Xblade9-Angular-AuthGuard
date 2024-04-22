@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignUpService } from 'src/app/services/sign-up.service';
@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
+  @Output() emitData = new EventEmitter<any>();
   signUpForm!: FormGroup;
 
   constructor(
@@ -39,6 +40,7 @@ export class SignUpComponent implements OnInit {
       this.svc.signUp(this.signUpForm.value).subscribe({
         next: (res) => {
           console.log(res);
+          this.emitData.emit(res)
           if (res.status === 'success') {
             this.dialog.open(AlertdialogboxComponent, {
               data: {

@@ -8,6 +8,7 @@ import { authguardGuard } from 'src/auth/authguard.guard';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MatFormComponent } from './components/mat-form/mat-form.component';
 import { CdrComponent } from './components/cdr/cdr.component';
+import { PracticeComponent } from './components/practice/practice.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'matform', component: MatFormComponent },
   { path: 'cdr', component: CdrComponent },
+  { path: 'prac', component: PracticeComponent },
 ];
 
 @NgModule({
